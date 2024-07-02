@@ -1,0 +1,25 @@
+
+- Para un AR proceso, la función de autocorrelación de la muestra debe tener una apariencia de forma exponencial decreciente. 
+Sin embargo, los procesos AR de orden superior son a menudo una mezcla de forma exponencial decreciente y amortiguado componentes sinusoidales.
+- La autocorrelación parcial de un AR (p) el proceso se convierte en cero al retardo p + 1
+- La función de autocorrelación de un MA (q) el proceso se convierte en cero al retardo q + 1, y mayor
+
+Forma de la autocorrelación (ACF)
+Exponencial, limitando a cero -	Modelo autorregresivo. Emplee la autocorrelación parcial para identificar el orden.
+Sinusoidal amortiguado, acercando a cero - Modelo autorregresivo. Emplee la autocorrelación parcial para identificar el orden.
+Algunos picos, los demás prácticamente nulos - Modelo de media móvil, se ve el orden en la posición anterior a que se anulen los picos.
+Decreciente, iniciando luego de algunos retardos - Modelo mixto(ARMA).
+Todos anulados o prácticamente nulos - Información esencialmente aleatoria (ruido blanco).
+Altos valores en ciertos momentos -	Se debe incluir un análisis de estacionalidad autorregresiva.
+No se acerca a cero - La información no es estacionaria.
+
+Forma de la PACF
+Pico grande en el desfase 1 que disminuye después de unos pocos desfases.
+    - Un término de promedio móvil en los datos. 
+    - Utilice la función de autocorrelación para determinar el orden del término de promedio móvil.
+Pico grande en el desfase 1 seguido de una oscilación amortiguada que se alterna entre correlaciones positivas y negativas.
+    - Un término de promedio móvil de mayor orden en los datos. 
+    - Utilice la función de autocorrelación para determinar el orden del término de promedio móvil.
+Correlaciones significativas en el primer o segundo desfases, seguidas de correlaciones que no son significativas.
+    - Un término autorregresivo en los datos. 
+    - El número de correlaciones significativas indica el orden del término autorregresivo.
