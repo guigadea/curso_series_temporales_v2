@@ -1,4 +1,6 @@
 
+Si la ACF decae muy lentamente ----> la serie no es estacionaria
+
 AR  - ACF cae exponencialmente
 	- PACF muere en el lag que es ---- los coeficientes no son los valores que estoy buscando, son las correlaciones
 	- en un AR puro, la serie de tiempo t depende de los p anteriores más una innovación o ruido en ese punto ----> todas las muestras anteriores tienen influencia en la muestra actual (decae exponencialmente)
@@ -31,13 +33,35 @@ filtro de Kalman
 Local Level Model ---- UnobservedComponents ---- local level
 plot_diagnostics se usa acá
 
-
-Si la ACF decae muy lentamente ----> la serie no es estacionaria
-
 AIC y BIC ---- menor es mejor
 Ljung-Box ---- menor es mejor ---- si los residuos son gaussianos ---- p-valor mayor a 0,05 ---- si da casi 0, entonces no logró limpiar el ruido
 heteroscedasticidad ---- p-valor mayor a 0,05 significa homogeneidad
 Jarque Bera ---- p-valor mayor a 0,05 ---- va de 0 a 4 el valor, tendría que andar por 2
+
+
+Periodograma ---- centrar la serie
+En una serie de frecuencia anual (12 muestras por año) y 120 observaciones (10 años), una componente anual debería aparecer para j=10 (10 ciclos en la muestra) o bien j/n=10/120=1/12
+En la gráfica, más a la izquierda es más largo plazo
+En el ols cuando se ponen los senos y cosenos, se multiplica pi por los coeficientes del periodograma
+Spectrum ---- muestra los valores del periodograma
+
+Regresión con "lag"
+correlación cruzada entre las variables (def ccf)
+lag0 ---- valores actuales
+la que se pone primero en la función es la que se va moviendo
+si en el lag -6, la gráfica baja, entonces cuando sube la primer variable, la otra baja (en tiempo 0, la segunda variable correlaciona bien con el tiempo -6)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - Para un AR proceso, la función de autocorrelación de la muestra debe tener una apariencia de forma exponencial decreciente. 
